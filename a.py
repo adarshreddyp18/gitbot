@@ -18,14 +18,14 @@ def add_collaborator(username):
     headers = {"Authorization": f"Bearer {GITHUB_TOKEN}"}
     response = requests.put(url, headers=headers)
     
-    if response.status_code == 201:
-        return "Collaborator added successfully.\n"
+    if response.status_code == 204:
+        return "Collaborator added successfully."
     elif response.status_code == 404:
-        return "User not found.\n"
+        return "User not found."
     elif response.status_code == 422:
-        return "User is already a collaborator.\n"
+        return "User is already a collaborator."
     else:
-        return "Error adding collaborator.\n"
+        return "Error adding collaborator."
 
 
 def remove_collaborator(username):
