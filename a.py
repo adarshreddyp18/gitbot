@@ -18,7 +18,7 @@ def add_collaborator(username):
     headers = {"Authorization": f"Bearer {GITHUB_TOKEN}"}
     response = requests.put(url, headers=headers)
     
-    if response.status_code == 204:
+    if response.status_code == 201:
         return "Collaborator added successfully."
     elif response.status_code == 404:
         return "User not found."
