@@ -27,9 +27,6 @@ def add_collaborator(username):
     else:
         return "Error adding collaborator."
 
-#new-user-18
-#Newusertogithub(@)18
-
 def remove_collaborator(username):
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/collaborators/{username}"
     headers = {"Authorization": f"Bearer {GITHUB_TOKEN}"}
